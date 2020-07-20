@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\mahasiswaModel;
 use Illuminate\Http\Request;
 
-class MahasiswaController extends Controller
+class MahasiswaController extends Controller 
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        return view('layouts.app');
+        return view('mahasiswa.index');
     }
 
     /**

@@ -8,10 +8,23 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-    <title>Mahasiswa</title>
+    <title> @yield('title') </title>
 </head>
 <body>
     @include('layouts.navbar')
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                @include('layouts.sidebar')
+            </div>
+            <div class="col-md-10">
+                @include('layouts.breadcrumb')
+                @yield('content')
+            </div>
+        </div>
+    </div>
+    
 
 
     <!-- Optional JavaScript -->
