@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\mahasiswaModel;
 use Illuminate\Http\Request;
+use DataTables;
 
 class MahasiswaController extends Controller 
 {
