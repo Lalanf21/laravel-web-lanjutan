@@ -1,22 +1,21 @@
 @extends('layouts.app')
 
-@section('title','Halaman mahasiswa')
+@section('title','Halaman Dosen')
 
-@section('bread1','mahasiswa')
-@section('bread2','daftar mahasiswa')
+@section('bread1','dosen')
+@section('bread2','daftar dosen')
 
 @section('content')
     <p>
-        <a href="{{ @route('add-mahasiswa') }}"class="btn btn-success btn-sm">Tambah</a>
+        <a href="{{ @route('dosen.create') }}"class="btn btn-success btn-sm">Tambah</a>
     </p> 
     @include('layouts.alert')
-    <table class="table table-striped"id="mhs-table">
+    <table class="table table-striped" id="dosen">
         <thead>
             <tr>
                 <th>No</th>
-                <th>NIM</th>
-                <th>Nama Lengkap</th>
-                <th>Prodi</th>
+                <th>NIDN</th>
+                <th>Nama Dosen</th>
                 <th>Alamat</th>
                 <th>Pilihan</th>
             </tr>
@@ -24,25 +23,22 @@
         </table>
         <script>
             $(function() {
-                $('#mhs-table').DataTable({
+                $('#dosen').DataTable({
                     processing: true, 
                     serverSide: true, 
-                    ajax: "{{ route('list-mahasiswa') }}",
+                    ajax: "{{ @route('list-dosen') }}",
+
                     columns: [{
                         data: 'DT_RowIndex', 
                         name: 'DT_RowIndex'
                     }, 
                     {
-                        data: 'nim',
-                        name: 'nim'
+                        data: 'nidn',
+                        name: 'nidn'
                     }, 
                     {
-                        data: 'nama_lengkap',
-                        name: 'nama_lengkap'
-                    }, 
-                    {
-                        data: 'mprodi.nama_prodi',
-                        name: 'nama_prodi'
+                        data: 'nama_dosen',
+                        name: 'nama_dosen'
                     }, 
                     {
                         data: 'alamat', 
