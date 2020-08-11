@@ -3,7 +3,7 @@
 @section('bread1','dosen')
 @section('bread2','Add data dosen')
 @section('content')
-    <h3>Form Mahasiswa</h3>
+    <h3>Form Dosen</h3>
     <hr> @include('layouts.alert')
     <form action="{{ @route('dosen.store') }}"method="POST"> 
     @csrf

@@ -29,3 +29,7 @@ Route::get('/mahasiswa/delete/{mahasiswa:nim}', 'MahasiswaController@destroy')->
 Route::get('/dosen/delete/{dosen}', 'DosenController@destroy');
 Route::get('/dosen/list', 'DosenController@dosen_list')->name('list-dosen');
 Route::resource('dosen', 'DosenController');
+
+Route::get('/prodi/delete/{prodi}', 'ProdiController@destroy');
+Route::get('/prodi/list', 'ProdiController@prodi_list')->name('list-prodi');
+Route::resource('prodi', 'ProdiController');

@@ -3,7 +3,7 @@
 @section('bread1','dosen')
 @section('bread2','edit Data')
 @section('content')
-<h3>Form Mahasiswa</h3>
+<h3>Form edit dosen</h3>
 <hr>
 
 @include('layouts.alert')

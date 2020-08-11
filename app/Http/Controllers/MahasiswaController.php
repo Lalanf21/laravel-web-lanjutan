@@ -26,17 +26,12 @@ class MahasiswaController extends Controller
             ->addIndexColumn()
             ->addColumn('action', function ($mhs) {
                 $action = '<a class="text-primary" href="/mahasiswa/edit/' . $mhs->nim . '">Edit</a>';
-                $action .= ' | <a class="text-danger" href="/mhs/delete/' . $mhs->nim . '">Hapus</a>';
+                $action .= ' | <a class="text-danger" href="/mahasiswa/delete/' . $mhs->nim . '">Hapus</a>';
                 return $action;
             })
             ->make(true);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $prodi = Prodi::all();
@@ -55,16 +50,11 @@ class MahasiswaController extends Controller
         return redirect()->route('mahasiswa')->with('success', 'Data berhasil ditambahkan');
     }
 
-    public function show(mahasiswa $mahasiswa)
-    {
-        //
-    }
-
     public function edit(Mahasiswa $mahasiswa, $id)
     {
         $prodi = Prodi::all();
         $mahasiswa = Mahasiswa::find($id);
-        return view('dosen.edit', compact('prodi', 'mahasiswa'));
+        return view('mahasiswa.edit', compact('prodi', 'mahasiswa'));
     }
 
     public function update(Request $request, Mahasiswa $mahasiswa)
